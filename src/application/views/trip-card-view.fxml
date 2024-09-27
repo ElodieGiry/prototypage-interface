@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="onTripViewClick" prefHeight="180.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+
+    <HBox layoutX="5.0" layoutY="5.0" prefHeight="153.0" prefWidth="589.0" spacing="20.0">
+        <children>
+            <ImageView fx:id="image" fitHeight="169.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox prefHeight="153.0" prefWidth="453.0">
+                <children>
+                    <Label fx:id="titre" prefHeight="47.0" prefWidth="375.0" style="-fx-padding:10;" text="Titre">
+                        <font>
+                            <Font name="System Bold" size="16.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="contrepartie" prefHeight="59.0" prefWidth="462.0" style="-fx-padding:10;" text="Descriptif de l'activité" />
+                    <Label fx:id="logement" prefHeight="59.0" prefWidth="462.0" style="-fx-padding:10;" text="Descriptif du logement" />
+                    <HBox prefHeight="36.0" prefWidth="328.0">
+                        <children>
+                            <Label fx:id="indexForTest" prefHeight="59.0" prefWidth="462.0" style="-fx-padding:10;" text="(indexForTest)">
+                        <font>
+                           <Font size="10.0" />
+                        </font></Label>
+                            <Label fx:id="heures" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="79.0" prefWidth="326.0" style="-fx-padding:10;" text="0 h/j" textAlignment="RIGHT">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </children>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+    </HBox>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+
+</AnchorPane>

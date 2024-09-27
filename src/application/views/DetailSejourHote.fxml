@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DetailSejourHoteController">
+   <children>
+    <MenuButton fx:id="buttonMenu" layoutX="1161.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-mark-color: transparent;">
+	   	  <graphic>
+	        <ImageView fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+	          <image>
+	            <Image url="https://upload.wikimedia.org/wikipedia/commons/7/70/User_icon_BLACK-01.png" />
+	          </image>
+	        </ImageView>
+	      </graphic>
+	       <items>
+	          <MenuItem mnemonicParsing="false" onAction="#onMenuButtonProfilClicked" text="Profil" />
+	          <MenuItem mnemonicParsing="false" onAction="#onMenuButtonMessagerieClicked" text="Messagerie" />
+	          <MenuItem mnemonicParsing="false" onAction="#onMenuButtonProfilClicked" text="Déconnexion" />
+	       </items>
+      </MenuButton>
+      <Text layoutX="50.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation :" wrappingWidth="94.0" />
+      <Text layoutX="50.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Période :" />
+      <Text layoutX="50.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service(s) :" />
+      <Text layoutX="50.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contrainte(s) :" />
+      <Text layoutX="50.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de voyageur(s) :" />
+      <Text layoutX="50.0" layoutY="555.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restauration : " />
+      <Text layoutX="10.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proposez votre séjour" textAlignment="CENTER" wrappingWidth="1280.875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="localisation" layoutX="223.0" layoutY="149.0" />
+      <TextField fx:id="contrainte" layoutX="223.0" layoutY="424.0" prefHeight="31.0" prefWidth="552.0" />
+      <TextField fx:id="nbVoyageur" layoutX="223.0" layoutY="479.0" prefHeight="31.0" prefWidth="38.0" />
+      <Button fx:id="btnValiderSejourHote" layoutX="1075.0" layoutY="649.0" mnemonicParsing="false" onAction="#validerSejourHote" text="Valider" />
+      <RadioButton fx:id="petitDej" layoutX="223.0" layoutY="539.0" mnemonicParsing="false" text="Petit déjeuner" />
+      <RadioButton fx:id="demiPension" layoutX="372.0" layoutY="539.0" mnemonicParsing="false" text="Demi-pension" />
+      <RadioButton fx:id="pensionComplete" layoutX="514.0" layoutY="539.0" mnemonicParsing="false" text="Pension complète" />
+      <RadioButton fx:id="jardinage" layoutX="223.0" layoutY="319.0" mnemonicParsing="false" text="Jardinage" />
+      <RadioButton fx:id="bricolage" layoutX="324.0" layoutY="319.0" mnemonicParsing="false" text="Bricolage" />
+      <RadioButton fx:id="babysitting" layoutX="423.0" layoutY="319.0" mnemonicParsing="false" text="Babysitting" />
+      <DatePicker fx:id="periodeDeb" layoutX="223.0" layoutY="204.0" />
+      <DatePicker fx:id="periodeFin" layoutX="498.0" layoutY="204.0" />
+      <TextField fx:id="dureeQuotidienne" layoutX="223.0" layoutY="368.0" prefHeight="31.0" prefWidth="38.0" />
+      <Text layoutX="50.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Durée quotidienne (h) :" />
+      <Text layoutX="50.0" layoutY="610.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contrepartie(s) :" />
+      <Text layoutX="50.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type logement :" />
+      <RadioButton fx:id="baladeCheval" layoutX="223.0" layoutY="594.0" mnemonicParsing="false" text="Balade à cheval" />
+      <RadioButton fx:id="blanchissage" layoutX="373.0" layoutY="594.0" mnemonicParsing="false" text="Blanchissage" />
+      <RadioButton fx:id="piscine" layoutX="514.0" layoutY="594.0" mnemonicParsing="false" text="Piscine" />
+      <Text layoutX="50.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfert :" />
+      <Button fx:id="btnConcept" layoutX="956.0" layoutY="649.0" mnemonicParsing="false" onAction="#concept" text="Concept" />
+      <HBox layoutX="223.0" layoutY="271.0" prefHeight="27.0" prefWidth="525.0" spacing="33.0">
+         <children>
+            <RadioButton fx:id="chambre" mnemonicParsing="false" text="Chambre">
+               <toggleGroup>
+                  <ToggleGroup fx:id="logement" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="tente" mnemonicParsing="false" text="Tente" toggleGroup="$logement" />
+            <RadioButton fx:id="cabane" mnemonicParsing="false" text="Cabane" toggleGroup="$logement" />
+         </children>
+      </HBox>
+      <HBox layoutX="224.0" layoutY="646.0" prefHeight="48.0" prefWidth="309.0" spacing="15.0">
+         <children>
+            <RadioButton fx:id="transfertOui" mnemonicParsing="false" text="Oui">
+               <toggleGroup>
+                  <ToggleGroup fx:id="transfert" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="transfertNon" mnemonicParsing="false" text="Non" toggleGroup="$transfert" />
+         </children>
+      </HBox>
+      <RadioButton fx:id="coursAnglais" layoutX="533.0" layoutY="319.0" mnemonicParsing="false" text="Cours anglais" />
+      <RadioButton fx:id="promenerChien" layoutX="659.0" layoutY="319.0" mnemonicParsing="false" text="Promener chiens" />
+      <RadioButton fx:id="wifi" layoutX="609.0" layoutY="594.0" mnemonicParsing="false" text="Wifi" />
+      <RadioButton fx:id="parking" layoutX="690.0" layoutY="594.0" mnemonicParsing="false" text="Parking" />
+      <ImageView fx:id="image" fitHeight="225.0" fitWidth="330.0" layoutX="909.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image" fitHeight="235.0" fitWidth="319.0" layoutX="909.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="localisationErr" fill="RED" layoutX="477.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation obligatoire" visible="false" wrappingWidth="211.0" />
+      <Text fx:id="periodeErr" fill="RED" layoutX="791.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Période obligatoire" visible="false" wrappingWidth="211.0" />
+      <Text fx:id="typeLogementErr" fill="RED" layoutX="668.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de logement obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="serviceErr" fill="RED" layoutX="903.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Service(s) obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="dureeErr" fill="RED" layoutX="324.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Durée obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="nbVoyageurErr" fill="RED" layoutX="324.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de voyageur(s)" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="restaurationErr" fill="RED" layoutX="782.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Restauration obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="contrepartieErr" fill="RED" layoutX="844.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contrepartie(s) obligatoire" visible="false" wrappingWidth="288.0" />
+      <Text fx:id="transfertErr" fill="RED" layoutX="400.0" layoutY="665.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transfert obligatoire" visible="false" wrappingWidth="288.0" />
+   </children>
+   <!-- 
+   <Pane fx:id="contact" layoutY="664.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-border-color: black;" styleClass="-fx-border-color" AnchorPane.bottomAnchor="0.0">
+     <children>
+        <Label layoutX="14.0" layoutY="15.0" text="Contact : adeona@woofing.fr" />
+     </children>
+   </Pane>
+    -->
+</AnchorPane>

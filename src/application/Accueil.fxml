@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AccueilController">
+   <children>
+      <Pane fx:id="contact" layoutY="664.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-border-color: black;" styleClass="-fx-border-color" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" text="Contact : adeona@woofing.fr" />
+         </children>
+      </Pane>
+      <Pane layoutX="140.0" layoutY="476.0" prefHeight="94.0" prefWidth="1000.0" style="-fx-border-color: black;" styleClass="-fx-border-color">
+         <children>
+            <DatePicker fx:id="debut_sejour" layoutX="340.0" layoutY="32.0" promptText="Début du séjour" />
+            <DatePicker fx:id="fin_sejour" layoutX="570.0" layoutY="32.0" promptText="Fin du séjour" />
+            <Button fx:id="rechercher" layoutX="840.0" layoutY="32.0" mnemonicParsing="false" onAction="#onSearchButtonClick" text="Rechercher voyage" />
+            <TextField fx:id="txtRecherche" layoutX="52.0" layoutY="32.0" prefHeight="25.0" prefWidth="232.0" promptText="Destination, contrepartie, logement ..." />
+            <Text fx:id="txtWarning" fill="RED" layoutX="52.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez saisir au moins 2 caractères" visible="false" wrappingWidth="249.13671875" />
+         </children>
+      </Pane>
+      <Label layoutX="372.0" layoutY="69.0" text="La plateforme d'échange et de volontariat nomade">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="connexion" layoutX="1064.0" layoutY="32.0" mnemonicParsing="false" onAction="#connexion" text="Connexion" />
+      <Button layoutX="1168.0" layoutY="32.0" mnemonicParsing="false" text="Inscription" />
+      <Button fx:id="proposerVoyage" layoutX="1102.0" layoutY="89.0" mnemonicParsing="false" onAction="#proposerVoyage" text="Proposer voyage" />
+   </children>
+</AnchorPane>
